@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Menu, 
@@ -7,15 +7,18 @@ import {
   ChevronDown,
   FileText, 
   Shield, 
-  Cloud, 
-  Zap,
   Users,
   Calendar,
-  TrendingUp,
   Github,
   Linkedin,
   Mail,
-  ExternalLink
+  ExternalLink,
+  FileStack,
+  Clock,
+  Lock,
+  Stethoscope,
+  Activity,
+  Database
 } from 'lucide-react';
 
 function App() {
@@ -58,10 +61,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center mr-3">
-                <FileText className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center mr-3">
+                <Stethoscope className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-blue-800">
                 ClinicalOps
               </span>
             </div>
@@ -71,11 +74,11 @@ function App() {
               <a href="#benefits" className="text-gray-600 hover:text-blue-600 transition-colors">Benefits</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
               <motion.button 
-                className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Book Demo
+                Schedule Demo
               </motion.button>
             </div>
 
@@ -100,8 +103,8 @@ function App() {
               <a href="#features" className="block text-gray-600 hover:text-blue-600">Features</a>
               <a href="#benefits" className="block text-gray-600 hover:text-blue-600">Benefits</a>
               <a href="#contact" className="block text-gray-600 hover:text-blue-600">Contact</a>
-              <button className="w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 rounded-full">
-                Book Demo
+              <button className="w-full bg-blue-700 text-white py-2 rounded-lg">
+                Schedule Demo
               </button>
             </div>
           </motion.div>
@@ -109,9 +112,8 @@ function App() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23e0f2fe%22 fill-opacity=%220.4%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+        <div className="absolute inset-0 bg-gray-50"></div>
         
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 text-center">
           <motion.div
@@ -122,22 +124,22 @@ function App() {
           >
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl md:text-7xl font-bold leading-tight"
+              className="text-4xl md:text-6xl font-bold leading-tight"
             >
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="text-blue-800">
                 ClinicalOps
               </span>
               <br />
-              <span className="text-gray-800">Smarter Healthcare</span>
+              <span className="text-gray-800">Professional Healthcare</span>
               <br />
-              <span className="text-gray-600 text-4xl md:text-5xl">Management for Clinics</span>
+              <span className="text-gray-600 text-3xl md:text-4xl">Management Platform</span>
             </motion.h1>
 
             <motion.p 
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
             >
-              A <span className="text-blue-600 font-semibold">secure</span>, <span className="text-teal-600 font-semibold">cloud-based</span> system for doctors to manage patients, appointments, and surgical follow-ups.
+              A <span className="text-blue-700 font-semibold">secure</span>, <span className="text-blue-700 font-semibold">HIPAA-compliant</span> system for healthcare providers to manage patient records, appointments, and clinical workflows.
             </motion.p>
 
             <motion.div 
@@ -145,18 +147,18 @@ function App() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <motion.button 
-                className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                className="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center gap-2 hover:bg-blue-800 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Book a Demo
+                Schedule Demo
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               
               <motion.button 
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-700 hover:text-blue-800 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Contact Us
               </motion.button>
@@ -191,30 +193,36 @@ function App() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <motion.div variants={fadeInUp} className="bg-white rounded-2xl p-8 shadow-sm">
-                <div className="text-red-500 text-5xl mb-4">📄</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Too Much Paperwork</h3>
+                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-4">
+                  <FileStack className="w-8 h-8 text-red-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Excessive Paperwork</h3>
                 <p className="text-gray-600">Data scattered across multiple systems and physical files</p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-2xl p-8 shadow-sm">
-                <div className="text-orange-500 text-5xl mb-4">📅</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Scheduling Chaos</h3>
+                <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-4">
+                  <Clock className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Scheduling Challenges</h3>
                 <p className="text-gray-600">Missed appointments and poor communication with patients</p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="bg-white rounded-2xl p-8 shadow-sm">
-                <div className="text-yellow-500 text-5xl mb-4">🔓</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Insecure Records</h3>
+                <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center mb-4">
+                  <Lock className="w-8 h-8 text-yellow-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Security Concerns</h3>
                 <p className="text-gray-600">Medical records stored without proper security measures</p>
               </motion.div>
             </div>
 
             <motion.div 
               variants={fadeInUp}
-              className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-8 text-white"
+              className="bg-blue-800 rounded-2xl p-8 text-white"
             >
-              <h3 className="text-2xl font-bold mb-4">ClinicalOps solves this with one secure platform</h3>
-              <p className="text-blue-100 text-lg">Streamline your healthcare operations with our comprehensive solution</p>
+              <h3 className="text-2xl font-bold mb-4">ClinicalOps provides a comprehensive solution</h3>
+              <p className="text-blue-100 text-lg">Streamline your healthcare operations with our secure, professional platform</p>
             </motion.div>
           </motion.div>
         </div>
@@ -241,11 +249,11 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <motion.div 
                 variants={fadeInUp}
-                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
+                whileHover={{ y: -2 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <FileText className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <FileText className="w-8 h-8 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Centralized Management</h3>
                 <p className="text-gray-600">Patient records and appointments in one secure dashboard</p>
@@ -253,11 +261,11 @@ function App() {
 
               <motion.div 
                 variants={fadeInUp}
-                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
+                whileHover={{ y: -2 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Shield className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Shield className="w-8 h-8 text-green-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Secure Storage</h3>
                 <p className="text-gray-600">HIPAA-compliant medical records with AWS S3 encryption</p>
@@ -265,11 +273,11 @@ function App() {
 
               <motion.div 
                 variants={fadeInUp}
-                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
+                whileHover={{ y: -2 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Cloud className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Database className="w-8 h-8 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Cloud Database</h3>
                 <p className="text-gray-600">Scalable AWS RDS with MySQL for reliable data management</p>
@@ -277,11 +285,11 @@ function App() {
 
               <motion.div 
                 variants={fadeInUp}
-                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-blue-300 transition-all duration-300"
-                whileHover={{ y: -5 }}
+                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
+                whileHover={{ y: -2 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Activity className="w-8 h-8 text-purple-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Easy Deployment</h3>
                 <p className="text-gray-600">Docker containerization with automated CI/CD pipelines</p>
@@ -292,7 +300,7 @@ function App() {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+      <section id="benefits" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <motion.div
             initial="initial"
@@ -312,30 +320,30 @@ function App() {
             <div className="grid md:grid-cols-3 gap-8">
               <motion.div 
                 variants={fadeInUp}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl p-8 text-center border border-gray-200 hover:shadow-lg transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="text-5xl font-bold text-blue-600 mb-3">300+</div>
+                <div className="text-5xl font-bold text-blue-700 mb-3">300+</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Patient Records</h3>
                 <p className="text-gray-600">Securely managed and easily accessible</p>
               </motion.div>
 
               <motion.div 
                 variants={fadeInUp}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl p-8 text-center border border-gray-200 hover:shadow-lg transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="text-5xl font-bold text-teal-600 mb-3">40%</div>
+                <div className="text-5xl font-bold text-green-700 mb-3">40%</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Fewer Errors</h3>
                 <p className="text-gray-600">Reduction in scheduling and administrative mistakes</p>
               </motion.div>
 
               <motion.div 
                 variants={fadeInUp}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-2xl p-8 text-center border border-gray-200 hover:shadow-lg transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="text-5xl font-bold text-blue-600 mb-3">15+</div>
+                <div className="text-5xl font-bold text-blue-700 mb-3">15+</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Healthcare Providers</h3>
                 <p className="text-gray-600">Clinics and doctors already using our platform</p>
               </motion.div>
@@ -364,41 +372,41 @@ function App() {
 
             <div className="space-y-12">
               <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                <div className="flex-shrink-0 w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   1
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Sign Up & Setup</h3>
-                  <p className="text-gray-600 text-lg">Doctors and clinics create their secure account and configure their practice settings</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Account Setup</h3>
+                  <p className="text-gray-600 text-lg">Healthcare providers create their secure account and configure practice settings</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <Users className="w-24 h-24 text-blue-500" />
+                  <Users className="w-24 h-24 text-blue-700" />
                 </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex flex-col md:flex-row-reverse items-center gap-8">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                <div className="flex-shrink-0 w-16 h-16 bg-green-700 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   2
                 </div>
                 <div className="flex-1 text-center md:text-right">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Upload & Manage</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Data Management</h3>
                   <p className="text-gray-600 text-lg">Securely upload patient records and begin managing all healthcare data in one place</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <FileText className="w-24 h-24 text-teal-500" />
+                  <FileText className="w-24 h-24 text-green-700" />
                 </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                <div className="flex-shrink-0 w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   3
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Schedule & Track</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Clinical Workflow</h3>
                   <p className="text-gray-600 text-lg">Efficiently schedule appointments and track surgical follow-ups with automated reminders</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <Calendar className="w-24 h-24 text-blue-500" />
+                  <Calendar className="w-24 h-24 text-purple-700" />
                 </div>
               </motion.div>
             </div>
@@ -407,7 +415,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-teal-600">
+      <section id="contact" className="py-20 bg-blue-800">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
           <motion.div
             initial="initial"
@@ -435,9 +443,9 @@ function App() {
             >
               <motion.a
                 href="mailto:hello@clinicalops.com"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-800 px-8 py-4 rounded-lg text-lg font-semibold flex items-center gap-2 hover:bg-gray-100 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Mail className="w-5 h-5" />
                 Contact Us
@@ -447,9 +455,9 @@ function App() {
                 href="https://github.com/clinicalops"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 hover:bg-white hover:text-blue-600 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center gap-2 hover:bg-white hover:text-blue-800 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Github className="w-5 h-5" />
                 View on GitHub
@@ -465,8 +473,8 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center mr-3">
-                <FileText className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center mr-3">
+                <Stethoscope className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold">ClinicalOps</span>
             </div>
