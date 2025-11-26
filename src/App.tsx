@@ -27,25 +27,28 @@ function App() {
   const features = [
     {
       icon: '⚡',
-      title: 'Lightning Performance',
-      desc: 'Sub-50ms query latency ensures patient records load instantly. AWS RDS with read replicas eliminates wait times during high-traffic hours.',
+      title: 'Sub-50ms Query Performance',
+      tech: 'AWS RDS MySQL • Read Replicas',
+      desc: 'Optimized database architecture with read replicas ensures instant patient record access during peak clinic hours.',
     },
     {
       icon: '🔒',
-      title: 'Bank-Grade Security',
-      desc: 'AWS S3 server-side encryption (SSE-S3) protects 2GB+ of medical documents. HIPAA-compliant infrastructure you can trust.',
+      title: 'AWS S3 + Docker Pipeline',
+      tech: 'SSE-S3 Encryption • GitHub Actions CI/CD',
+      desc: 'HIPAA-compliant storage with automated deployment reducing deployment time by 80% (15min → 3min).',
     },
     {
-      icon: '🔄',
-      title: 'Zero Downtime',
-      desc: 'Dockerized microservices with automated GitHub Actions CI/CD. Deploy updates in 3 minutes without interrupting operations.',
-    },
-    {
-      icon: '🏥',
-      title: 'Multi-Clinic Orchestration',
-      desc: 'Centralize operations for 5+ surgeons across multiple locations. One dashboard, complete visibility.',
+      icon: '⚙️',
+      title: 'Spring Boot + React Stack',
+      tech: 'Java Backend • TypeScript Frontend',
+      desc: 'Full-stack architecture serving 5 surgeons across 10 clinics with responsive dashboard interface.',
     },
   ]
+
+  const handleEmailCopy = () => {
+    navigator.clipboard.writeText('arancksj@gmail.com')
+    alert('📧 Email copied to clipboard: arancksj@gmail.com')
+  }
 
   return (
     <div className="app">
@@ -137,6 +140,7 @@ function App() {
             <div key={idx} className="feature-card" style={{ animationDelay: `${idx * 0.1}s` }}>
               <div className="feature-icon">{feature.icon}</div>
               <h3 className="feature-title">{feature.title}</h3>
+              <div className="feature-tech">{feature.tech}</div>
               <p className="feature-desc">{feature.desc}</p>
             </div>
           ))}
@@ -147,58 +151,72 @@ function App() {
       <section className="tech-stack" id="tech">
         <div className="tech-content">
           <div className="tech-header">
-            <div className="section-label">Infrastructure</div>
-            <h2 className="section-title">Enterprise-Grade Architecture</h2>
+            <div className="section-label">Full Stack Implementation</div>
+            <h2 className="section-title">Production Technology Stack</h2>
             <p className="tech-subtitle">
-              Built on AWS with Spring Boot and React. Containerized deployment
-              with automated CI/CD pipelines.
+              Enterprise AWS infrastructure powering multi-clinic operations.
+              Spring Boot backend, React.js frontend, automated CI/CD deployment.
             </p>
           </div>
-          <div className="tech-specs">
-            <div className="spec-group">
-              <div className="spec-title">Backend</div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                Spring Boot Application Server
-              </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                AWS RDS MySQL with Read Replicas
-              </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                Automated Backup & Recovery
+          
+          <div className="tech-stack-visual">
+            <div className="tech-layer">
+              <div className="layer-label">Frontend</div>
+              <div className="tech-badges">
+                <span className="tech-badge primary">React.js</span>
+                <span className="tech-badge primary">TypeScript</span>
+                <span className="tech-badge">Vite</span>
+                <span className="tech-badge">Responsive Dashboard</span>
               </div>
             </div>
-            <div className="spec-group">
-              <div className="spec-title">Security</div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                AWS S3 Server-Side Encryption (SSE-S3)
-              </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                HIPAA-Compliant Data Storage
-              </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                Role-Based Access Control
+            
+            <div className="tech-layer">
+              <div className="layer-label">Backend</div>
+              <div className="tech-badges">
+                <span className="tech-badge primary">Spring Boot</span>
+                <span className="tech-badge primary">Java</span>
+                <span className="tech-badge">RESTful APIs</span>
+                <span className="tech-badge">Microservices</span>
               </div>
             </div>
-            <div className="spec-group">
-              <div className="spec-title">DevOps</div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                Docker Containerization
+            
+            <div className="tech-layer">
+              <div className="layer-label">Database & Storage</div>
+              <div className="tech-badges">
+                <span className="tech-badge primary">AWS RDS MySQL</span>
+                <span className="tech-badge">Read Replicas</span>
+                <span className="tech-badge primary">AWS S3</span>
+                <span className="tech-badge">SSE-S3 Encryption</span>
               </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                GitHub Actions CI/CD Pipeline
+            </div>
+            
+            <div className="tech-layer">
+              <div className="layer-label">DevOps & Infrastructure</div>
+              <div className="tech-badges">
+                <span className="tech-badge primary">Docker</span>
+                <span className="tech-badge primary">GitHub Actions</span>
+                <span className="tech-badge">AWS Cloud</span>
+                <span className="tech-badge">CI/CD Pipeline</span>
               </div>
-              <div className="spec-item">
-                <span className="spec-dot"></span>
-                Zero-Downtime Deployments
-              </div>
+            </div>
+          </div>
+
+          <div className="tech-metrics">
+            <div className="tech-metric">
+              <div className="tech-metric-label">Query Latency</div>
+              <div className="tech-metric-value">&lt;50ms</div>
+            </div>
+            <div className="tech-metric">
+              <div className="tech-metric-label">Deployment Time</div>
+              <div className="tech-metric-value">3 min</div>
+            </div>
+            <div className="tech-metric">
+              <div className="tech-metric-label">Time Reduction</div>
+              <div className="tech-metric-value">80%</div>
+            </div>
+            <div className="tech-metric">
+              <div className="tech-metric-label">Document Storage</div>
+              <div className="tech-metric-value">2GB+</div>
             </div>
           </div>
         </div>
